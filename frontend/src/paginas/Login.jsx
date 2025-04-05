@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formlog } from '../componentes/formlog'
+import { Formlog } from '../componentes/Formlog'
 
 
 export const Login = () => {
