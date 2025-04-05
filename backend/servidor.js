@@ -229,7 +229,6 @@ app.post("/admin/ingresomermas", async (req, res) => {
 
     if (
       !tipo ||
-      !cantidad ||
       !descripcion ||
       !causas ||
       !responsable ||
