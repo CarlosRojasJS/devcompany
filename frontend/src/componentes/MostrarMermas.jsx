@@ -29,7 +29,7 @@ export const MostrarMermas = () => {
 
   const obtenerNombreUsuario = (usuarioId) => {
     return (
-      usuarios.find((usuario) => usuario._id === usuarioId) || {
+      usuarios.find((usuario) => usuario.id === usuarioId) || {
         nombre: "",
         apellido: "",
       }
@@ -48,7 +48,7 @@ export const MostrarMermas = () => {
       >
         <option value="">Todos los usuarios</option>
         {usuarios.map((usuario) => (
-          <option key={usuario._id} value={usuario._id}>
+          <option key={usuario._id} value={usuario.id}>
             {usuario.nombre} {usuario.apellido}
           </option>
         ))}
@@ -76,6 +76,7 @@ export const MostrarMermas = () => {
             <th>Causas</th>
             <th>Responsable</th>
             <th>Mejoras</th>
+            <th>Asignada por</th>
           </tr>
         </thead>
         <tbody>
@@ -89,6 +90,7 @@ export const MostrarMermas = () => {
                 <td>{merma.causas}</td>
                 <td>{usuario.nombre + " " + usuario.apellido}</td>
                 <td>{merma.mejoras}</td>
+                <td>{merma.admin}</td>
               </tr>
             );
           })}

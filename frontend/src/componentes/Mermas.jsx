@@ -10,6 +10,7 @@ export const Mermas = () => {
   const [responsable, setResponsable] = useState("");
   const [mejoras, setMejoras] = useState("");
   const [error, setError] = useState("");
+  const [admin, setAdmin] = useState("");
 
   useEffect(() => {
     axios
@@ -20,7 +21,14 @@ export const Mermas = () => {
 
   const ingresarMerma = async (e) => {
     e.preventDefault();
-    if (!tipo || !descripcion || !causas || !responsable || !mejoras) {
+    if (
+      !tipo ||
+      !descripcion ||
+      !causas ||
+      !responsable ||
+      !mejoras ||
+      !admin
+    ) {
       setError("Todos los campos son obligatorios");
       return;
     } else {
@@ -34,12 +42,14 @@ export const Mermas = () => {
         causas,
         responsable,
         mejoras,
+        admin,
       });
       setTipo("");
       setDescripcion("");
       setCausas("");
       setResponsable("");
       setMejoras("");
+      setAdmin;
       window.alert("MERMA INGRESADA CORRECTAMENTE");
     } catch (error) {
       window.alert("ERROR AL INGRESAR MERMA", error);
@@ -78,7 +88,7 @@ export const Mermas = () => {
       >
         <option value="">Seleccionar responsable</option>
         {usuarios.map((usuario) => (
-          <option key={usuario._id} value={usuario._id}>
+          <option key={usuario._id} value={usuario.id}>
             {usuario.nombre} {usuario.apellido}
           </option>
         ))}
@@ -91,6 +101,32 @@ export const Mermas = () => {
         value={mejoras}
         onChange={(e) => setMejoras(e.target.value)}
       />
+      <label htmlFor="">Asignada por: </label>
+      <select
+        name=""
+        id="admin"
+        value={admin}
+        onChange={(e) => setAdmin(e.target.value)}
+      >
+        <option value=""></option>
+        {usuarios
+          .filter((usuario) => usuario.rol === "admin")
+          .map((usuario) => (
+            <option
+              key={usuario._id}
+              value={
+                usuario.nombre +
+                " " +
+                usuario.apellido +
+                ", " +
+                usuario.cargo +
+                "."
+              }
+            >
+              {usuario.nombre} {usuario.apellido}
+            </option>
+          ))}
+      </select>
       <button id="btninmermas" onClick={ingresarMerma}>
         Ingresar merma
       </button>

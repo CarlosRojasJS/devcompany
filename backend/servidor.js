@@ -76,7 +76,7 @@ app.post("/login", async (req, res) => {
       contacto: usuario.contacto,
       email: usuario.email,
       rol: usuario.rol,
-      registroId: registro.insertedId, //enviar el id de registro al frontend
+      registroId: registro.insertedId, //enviar el id de registro al frontendiar el id de usuario al frontend
     });
   } catch (error) {
     console.error("Error en login:", error);
@@ -219,7 +219,7 @@ app.get("/admin/registros", async (req, res) => {
 //Ingresar mermas
 app.post("/admin/ingresomermas", async (req, res) => {
   try {
-    const { tipo, descripcion, cantidad, causas, responsable, mejoras } =
+    const { tipo, descripcion, causas, responsable, mejoras, admin } =
       req.body;
 
     const fechayhora = new Date().toLocaleString("es-CL", {
@@ -232,7 +232,8 @@ app.post("/admin/ingresomermas", async (req, res) => {
       !descripcion ||
       !causas ||
       !responsable ||
-      !mejoras
+      !mejoras ||
+      !admin
     ) {
       return res
         .status(400)
@@ -246,6 +247,7 @@ app.post("/admin/ingresomermas", async (req, res) => {
       causas,
       responsable,
       mejoras,
+      admin
     };
 
     const mermas = bd.collection("mermas");
@@ -263,6 +265,19 @@ app.post("/admin/ingresomermas", async (req, res) => {
 app.get("/admin/mermas", async (req, res) => {
   try {
     const mermas = await bd.collection("mermas").find().toArray();
+    res.json(mermas);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error en el servidor" });
+  }
+});
+
+//Obtener mermas por usuario
+app.get("/usuario/mermas/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const colecmermas = bd.collection("mermas");
+    const mermas = await colecmermas.find({ responsable: id }).toArray();
     res.json(mermas);
   } catch (error) {
     console.error(error);

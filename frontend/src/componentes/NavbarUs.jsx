@@ -2,6 +2,7 @@ import { useState } from "react";
 import { InfoPerso } from "./InfoPerso";
 import { TareasAsig } from "./TareasAsig";
 import { Logout } from "./Logout";
+import { MermasAsignadas } from "./MermasAsignadas";
 
 export const NavbarUs = () => {
   const [componente, setComponente] = useState("");
@@ -19,6 +20,9 @@ export const NavbarUs = () => {
         <button className="btnmenu" onClick={() => setComponente("tareas")}>
           Tareas Asignadas
         </button>
+        <button className="btnmenu" onClick={() => setComponente("mermas")}>
+          Mermas Asignadas
+        </button>
         <Logout />
       </div>
 
@@ -33,6 +37,7 @@ export const NavbarUs = () => {
         )}
         {componente === "info" && <InfoPerso />}
         {componente === "tareas" && <TareasAsig />}
+        {componente === "mermas" && <MermasAsignadas />}
       </div>
     </div>
   );
