@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    font-family: "Big Shoulders", sans-serif;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    
+}
+
+#formlogin{
+    box-shadow: 1px 1px 10px 1px grey;
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px;
+    font-size: 15px;
+}
+
+#contform{
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+}
+
+#inkey, #inid{
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+#btnform{
+    width: 100%;
+    height: 40px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    
+}
+
+.lbl{
+    margin-bottom: 50%;
+}
+ #imglogo{
+    width: 100%;
+    padding-bottom: 20px;
+ }
+

@@ -1,0 +1,278 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+#contnavbar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+#contnavbar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: blueviolet;
+  display: block;
+}
+
+#btnlogout {
+  position: absolute;
+  bottom: 8px;
+  left: 1px;
+  text-decoration: underline;
+}
+
+#btnlogout:hover {
+  color: grey;
+  background-color: transparent;
+}
+
+#cuerpo,
+#continfo,
+#divinfo,
+#divtareas,
+#divinfousuarios,
+#divtareas,
+#contInicio {
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+#divinfo,
+#divtareas {
+  color: white;
+}
+#divinfoinfo {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.btnmenu {
+  width: 100%;
+  background: none;
+  border: none;
+  color: blueviolet;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 18px;
+}
+.btnmenu:hover {
+  background-color: blueviolet;
+  color: white;
+  border-radius: 10px;
+}
+
+#cuerpo {
+  text-align: center;
+}
+#contasigtarea {
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  padding: 20px;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+#tareasasignadas {
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+#tittarea,
+#descripcion {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#btnasig {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+#btnasig:hover {
+  background-color: blueviolet;
+  border: 1px solid white;
+  color: white;
+}
+#selectasig {
+  width: 40%;
+  text-align: center;
+  border-radius: 10px;
+  height: 30px;
+}
+
+#tittarasig {
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+#contareasasignadas {
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr, 1fr, 1fr;
+}
+
+#divtarea {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+}
+
+#btnfintarea {
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  position: sticky;
+  width: 200px;
+  cursor: pointer;
+  width: 100%;
+}
+#btnfintarea:hover {
+  background-color: grey;
+}
+#btnfintarea:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+#titulodescrip {
+  border: 3px solid rgb(189, 186, 186);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  color: black;
+}
+th,
+td {
+  border: 1px solid blueviolet;
+  padding: 5px;
+}
+thead {
+  background-color: blueviolet;
+  color: white;
+}
+
+#tituloinformes,
+#divinformes,
+#seleccioninformes {
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+select {
+  width: 40%;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#mermas {
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  padding: 20px;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+#mermas > input,
+textarea {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.textareamermas {
+  height: 70px;
+}
+
+#btninmermas {
+  background-color: white;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+
+  cursor: pointer;
+}
+#btninmermas:hover {
+  background-color: blueviolet;
+  border: 1px solid white;
+  color: white;
+}
+
+#pdf {
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  padding: 15px;
+  align-items: center;
+  position: relative;
+}
+#pdf:hover {
+  background-color: blueviolet;
+  border: 1px solid white;
+  color: white;
+}
