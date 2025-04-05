@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { backendUrl } from "/api.js";
 
 export const MostrarTareas = () => {
   const [tareas, setTareas] = useState([]);
@@ -17,7 +18,7 @@ export const MostrarTareas = () => {
     }
 
     axios
-      .get(`http://localhost:5000/usuario/tareas/${usuario.id}`)
+      .get(`${backendUrl}/usuario/tareas/${usuario.id}`)
       .then((response) => setTareas(response.data.reverse()))
       .catch(() => setError("Error al obtener las tareas"));
   }, [usuario]);
@@ -28,7 +29,7 @@ export const MostrarTareas = () => {
         timeZone: "America/Santiago",
         hour12: false,
       });
-      await axios.put("http://localhost:5000/usuario/actualizarestado", {
+      await axios.put(`${backendUrl}/usuario/actualizarestado`, {
         id: id,
         nuevoEstado: nuevoEstado,
         fechadetermino: fechayhora,

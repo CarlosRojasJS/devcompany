@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { backendUrl } from "/api.js";
 
 export const Mermas = () => {
   const [usuarios, setUsuarios] = useState([""]);
@@ -12,7 +13,7 @@ export const Mermas = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/usuarios")
+      .get(`${backendUrl}/admin/usuarios`)
       .then((response) => setUsuarios(response.data))
       .catch(() => setError("Error al obtener los usuarios"));
   }, []);
@@ -27,7 +28,7 @@ export const Mermas = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/admin/ingresomermas", {
+      await axios.post(`${backendUrl}/admin/ingresomermas`, {
         tipo,
         descripcion,
         causas,

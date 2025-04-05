@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { backendUrl } from "/api.js";
 
 export const RegEntradas = () => {
   const [registros, setRegistros] = useState([]);
@@ -10,14 +11,14 @@ export const RegEntradas = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/registros")
+      .get(`${backendUrl}/admin/registros`)
       .then((response) => setRegistros(response.data.reverse()))
       .catch(() => setError("Error al obtener los registros"));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/usuarios")
+      .get(`${backendUrl}/admin/usuarios`)
       .then((response) => setUsuarios(response.data))
       .catch(() => setError("Error al obtener los usuarios"));
   }, []);

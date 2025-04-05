@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { backendUrl } from "/api.js";
 
 export const Logout = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export const Logout = () => {
     if (!registroactivo || !registroactivo._id)
       console.error("No se encontró ningún registro");
     try {
-      axios.post("http://localhost:5000/logout", {
+      axios.post(`${backendUrl}/logout`, {
         _id: registroactivo._id,
       });
       localStorage.removeItem("registroactivo");

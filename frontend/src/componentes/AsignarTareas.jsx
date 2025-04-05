@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Historialdetareas } from "./HistorialTareas";
+import { backendUrl } from "/api.js"
 
 export const AsignarTareas = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -11,7 +12,7 @@ export const AsignarTareas = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/usuarios")
+      .get(`${backendUrl}/admin/usuarios`)
       .then((response) => setUsuarios(response.data))
       .catch(() => setError("Error al obtener los usuarios"));
   }, []);
@@ -19,7 +20,7 @@ export const AsignarTareas = () => {
   const enviardatos = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/admin/agregartarea", {
+      await axios.post(`${backendUrl}/admin/agregartarea`, {
         titulo,
         descripcion,
         usuarioId,

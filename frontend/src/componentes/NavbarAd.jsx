@@ -14,7 +14,7 @@ export const NavbarAd = () => {
       <div>
         <div id="contnavbar">
           <div id="contimgmenu">
-            <img id="imglogo" src="./public/logo.jpg" alt="" />
+            <img id="imglogo" src="logo.jpg" alt="" />
           </div>
 
           <button className="btnmenu" onClick={() => setComponente("usuarios")}>

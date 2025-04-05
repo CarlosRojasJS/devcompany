@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { backendUrl } from "/api.js";
 
 export const VerUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -7,7 +8,7 @@ export const VerUsuarios = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/usuarios")
+      .get(`${backendUrl}/admin/usuarios`)
       .then((response) => setUsuarios(response.data))
       .catch(() => setError("Error al obtener los usuarios"));
   }, []);

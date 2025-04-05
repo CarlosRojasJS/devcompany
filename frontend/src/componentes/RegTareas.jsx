@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { backendUrl } from "/api.js";
 
 export const RegTareas = () => {
   const [tareas, setTareas] = useState([]);
@@ -9,14 +10,14 @@ export const RegTareas = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/historialtareas")
+      .get(`${backendUrl}/admin/historialtareas`)	
       .then((response) => setTareas(response.data.reverse()))
       .catch(() => setError("Error al obtener las tareas"));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/usuarios")
+      .get(`${backendUrl}/admin/usuarios`)	
       .then((response) => setUsuarios(response.data))
       .catch(() => setError("Error al obtener los usuarios"));
   }, []);

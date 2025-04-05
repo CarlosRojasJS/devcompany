@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { backendUrl } from "/api.js";
 
 export const Formlog = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ export const Formlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post(`${backendUrl}/login`, {
         email,
         pass,
       });

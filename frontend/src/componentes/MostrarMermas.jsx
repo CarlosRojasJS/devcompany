@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { backendUrl } from "/api.js";
 
 export const MostrarMermas = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -10,14 +11,14 @@ export const MostrarMermas = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/usuarios")
+      .get(`${backendUrl}/admin/usuarios`)
       .then((response) => setUsuarios(response.data))
       .catch(() => setError("Error al obtener los usuarios"));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/mermas")
+      .get(`${backendUrl}/admin/mermas`)	
       .then((response) => setMermas(response.data.reverse()))
       .catch(() => setError("Error al obtener las mermas"));
   }, []);
