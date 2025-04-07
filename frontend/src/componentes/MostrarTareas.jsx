@@ -72,10 +72,16 @@ export const MostrarTareas = () => {
               </p>
               <br />
               <p>
-                <small>Fecha de asignación: {tarea.fechadecreacion}</small>
+                <small>Fecha de asignación: {tarea.fechadecreacion.toLocaleString("es-CL", {
+      timeZone: "America/Santiago",
+      hour12: false,
+    })}</small>
               </p>
               <p>
-                <small>Fecha de termino: {tarea.fechadetermino}</small>
+                <small>Fecha de termino: {tarea.fechadetermino.toLocaleString("es-CL", {
+      timeZone: "America/Santiago",
+      hour12: false,
+    })}</small>
               </p>
             </div>
 
