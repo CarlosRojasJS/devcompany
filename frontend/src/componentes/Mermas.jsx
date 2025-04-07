@@ -10,7 +10,7 @@ export const Mermas = () => {
   const [responsable, setResponsable] = useState("");
   const [mejoras, setMejoras] = useState("");
   const [error, setError] = useState("");
-  const [admin, setAdmin] = useState("");
+  const [asignadapor, setAsignadapor] = useState("");
 
   useEffect(() => {
     axios
@@ -27,7 +27,7 @@ export const Mermas = () => {
       !causas ||
       !responsable ||
       !mejoras ||
-      !admin
+      !asignadapor
     ) {
       setError("Todos los campos son obligatorios");
       return;
@@ -42,14 +42,14 @@ export const Mermas = () => {
         causas,
         responsable,
         mejoras,
-        admin,
+        asignadapor,
       });
       setTipo("");
       setDescripcion("");
       setCausas("");
       setResponsable("");
       setMejoras("");
-      setAdmin;
+      setAsignadapor;
       window.alert("MERMA INGRESADA CORRECTAMENTE");
     } catch (error) {
       window.alert("ERROR AL INGRESAR MERMA", error);
@@ -105,8 +105,8 @@ export const Mermas = () => {
       <select
         name=""
         id="admin"
-        value={admin}
-        onChange={(e) => setAdmin(e.target.value)}
+        value={asignadapor}
+        onChange={(e) => setAsignadapor(e.target.value)}
       >
         <option value=""></option>
         {usuarios

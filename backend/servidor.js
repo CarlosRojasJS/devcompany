@@ -219,7 +219,7 @@ app.get("/admin/registros", async (req, res) => {
 //Ingresar mermas
 app.post("/admin/ingresomermas", async (req, res) => {
   try {
-    const { tipo, descripcion, causas, responsable, mejoras, admin } =
+    const { tipo, descripcion, causas, responsable, mejoras, asignadapor } =
       req.body;
 
     const fechayhora = new Date().toLocaleString("es-CL", {
@@ -233,7 +233,7 @@ app.post("/admin/ingresomermas", async (req, res) => {
       !causas ||
       !responsable ||
       !mejoras ||
-      !admin
+      !asignadapor
     ) {
       return res
         .status(400)
@@ -247,7 +247,7 @@ app.post("/admin/ingresomermas", async (req, res) => {
       causas,
       responsable,
       mejoras,
-      admin
+      asignadapor
     };
 
     const mermas = bd.collection("mermas");
