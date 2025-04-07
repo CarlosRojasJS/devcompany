@@ -98,11 +98,10 @@ app.get("/admin/usuarios", async (req, res) => {
 //Agregar tarea
 app.post("/admin/agregartarea", async (req, res) => {
   try {
-    /* const fechayhora = new Date().toLocaleString("es-CL", {
+    const fechayhora = new Date().toLocaleString("es-CL", {
       timeZone: "America/Santiago",
       hour12: false,
-    }); */
-    const fechayhora = new Date();
+    });
 
     const { titulo, descripcion, usuarioId } = req.body;
 
