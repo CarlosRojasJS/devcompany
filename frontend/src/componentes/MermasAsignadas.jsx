@@ -25,13 +25,18 @@ export const MermasAsignadas = () => {
   }, [usuario]);
 
   return (
+    <>
+    <div id="titulomermas">
+      <h2 style={{color:"white", textAlign:"center"}}>Mermas Asignadas</h2>
+    </div>
     <div id="divmermasusuario">
-      <h1>Mermas Asignadas</h1>
+      
       <p>{error}</p>
+      
 
       {mermas.length === 0 && !error ? (
         <p
-          style={{ background: "white", padding: "10px", borderRadius: "10px" }}
+          style={{ textAlign: "center", background: "white", padding: "10px", borderRadius: "10px" }}
         >
           No existen mermas asignadas
         </p>
@@ -47,5 +52,7 @@ export const MermasAsignadas = () => {
         ))
       )}
     </div>
+    
+    </>
   );
 };

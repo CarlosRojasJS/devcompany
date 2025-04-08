@@ -8,7 +8,7 @@ export const TareasAsig = () => {
         <h2 style={{ color: "white" }}>Tareas Asignadas</h2>
       </div>
       <div id="contareasasignadas">
-        <MostrarTareas />
+        <MostrarTareas/>
       </div>
     </>
   );
